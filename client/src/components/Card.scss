@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // border: 2px dashed blue;
+  padding: 1rem;
+  background-color: #FFDB73;
+
+  width: 20%;
+  margin: 0 1rem 0 1rem;
+  border-radius: 0.7rem;
+
+  .front-and-back-views {
+    // border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      // add width and height here - use % values so its responsive
+      display: flex;
+      box-shadow: 0.1rem 0.1rem 0.4rem 0 #949494;
+      background-color: white;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .name-and-type {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
