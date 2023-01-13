@@ -1,10 +1,8 @@
-const express = require('express');
+import express from "express";
+import { getPokemon } from "../controllers/pokemon.js";
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    "pokemon": ["pokemon1", "pokemon2", "pokemon3"]
-  })
-});
+router.get("/", getPokemon);
 
-module.exports = router;
+export default router;

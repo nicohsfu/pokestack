@@ -1,10 +1,8 @@
-const express = require('express');
+import express from "express";
+import { getTrainers } from "../controllers/trainers.js";
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    "trainers": ["trainer1", "trainer2", "trainer3"]
-  })
-});
+router.get("/", getTrainers);
 
-module.exports = router;
+export default router;
