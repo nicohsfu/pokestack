@@ -1,8 +1,17 @@
-.app {
+.cards {
   // border: 2px solid green;
-  margin: 2% 5% 0 5%;
+  margin: 2% 5% 5% 5%;
   display: flex;
   justify-content: center;
-  max-width: 100%;
+  align-items: center;
+  width: 800px;
+
+  flex-wrap: wrap;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
