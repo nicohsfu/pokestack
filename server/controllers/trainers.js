@@ -1,5 +1,5 @@
 export const getTrainers = (req, res) => {
   res.json({
-    "trainers": ["trainer1"]
+    'trainers': ['trainer1']
   })
 };
