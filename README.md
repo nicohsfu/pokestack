@@ -1,3 +1,10 @@
-Initital README
+# Pokestack
+by Nico Hernandez and Sam Julian
 
-this is the pokestack app
+## Tech Stack
+
+text
+
+## Demo
+
+text

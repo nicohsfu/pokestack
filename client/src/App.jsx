@@ -23,10 +23,10 @@ function App() {
   }, [pokemonCards]);
 
   return (
-    <>
+    <div className='app'>
       <Navbar />
       
-      <div className='app'>
+      <div className='cards'>
         <Card />
         <Card />
         <Card />
@@ -37,7 +37,7 @@ function App() {
         <Card />
       </div>
 
-    </>
+    </div>
   );
 }
 
