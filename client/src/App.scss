@@ -1,10 +1,10 @@
 .cards {
   // border: 2px solid green;
-  margin: 2% 5% 5% 5%;
+  margin: 2rem 5% 2rem 5%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  max-width: 1000px;
 
   flex-wrap: wrap;
 }
