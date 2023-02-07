@@ -9,6 +9,21 @@ export const getPokemon = async (req, res) => {
   }
 };
 
+export const getIndividualPokemon = async (req, res, next) => {
+  let pokemon;
+  try {
+    pokemon = await Pokemon.findById(req.params.id);
+    if (!pokemon) {
+      // return res.status(404).json({ message: "Could not find the specific Pokemon" });
+      return res.status(404).send("404 - Could not find specific Pokemon");
+    }
+    res.json(pokemon);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+  next();
+};
+
 export const addPokemon = async (req, res) => {
   const pokemon = new Pokemon({
     name: req.body.name,
