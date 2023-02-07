@@ -27,14 +27,10 @@ function App() {
       <Navbar />
       
       <div className='cards'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card name="Squirtle" type="Water" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"/>
+        <Card name="Ivysaur" type="Grass" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png"/>
+        <Card name="Charizard" type="Fire | Flying" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"/>
+
       </div>
 
     </div>
