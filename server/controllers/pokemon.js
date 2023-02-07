@@ -19,8 +19,9 @@ export const getIndividualPokemon = async (req, res, next) => {
     }
     res.json(pokemon);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    return res.status(500).json({ message: err.message });
   }
+  res.pokemon = pokemon;
   next();
 };
 
@@ -47,6 +48,10 @@ export const addPokemon = async (req, res) => {
   }
 };
 
-export const releasePokemon = async (req, res) => {
-  
+export const releasePokemon = async (req, res, next) => {
+  try {
+    await res.pokemon.remove();
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
 };
