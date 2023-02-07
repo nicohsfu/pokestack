@@ -1,9 +1,11 @@
 import express from 'express';
-import { getPokemon, addPokemon, releasePokemon } from '../controllers/pokemon.js';
+import { getPokemon, getIndividualPokemon, addPokemon, releasePokemon } from '../controllers/pokemon.js';
 
 const router = express.Router();
 
 router.get('/', getPokemon);
+
+router.get('/:id', getIndividualPokemon);
 
 router.post('/', addPokemon);
 
