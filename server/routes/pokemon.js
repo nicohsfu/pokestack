@@ -9,6 +9,6 @@ router.get('/:id', getIndividualPokemon);
 
 router.post('/', addPokemon);
 
-router.delete('/:id', releasePokemon);
+router.delete('/:id', getIndividualPokemon, releasePokemon);
 
 export default router;
