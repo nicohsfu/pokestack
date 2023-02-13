@@ -28,10 +28,24 @@
     }
   }
 
-  .name-and-type {
+  .name-and-type-and-button {
     margin-top: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // border: 2px solid red;
+  }
+  
+  .name-and-type {
+    // border: 2px solid green;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .fixedWidthDiv{
+    display: flex;
+    justify-content: center;
+    width: 4rem;
   }
 }
