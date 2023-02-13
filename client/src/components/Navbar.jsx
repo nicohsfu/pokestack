@@ -4,12 +4,13 @@ import './Navbar.scss';
 function Navbar() {
   return (
     <div className='navbar'>
-      {/* <h1>POKESTACK</h1> */}
-      <img
-        className='pokestack-logo'
-        src='https://i.imgur.com/YrlmBrz.png'
-        alt='pokestack logo'
-      />
+      <div>
+        <img
+          className='pokestack-logo'
+          src='https://i.imgur.com/h8vf1yd.png'
+          alt='pokestack logo and logotype'
+        />
+      </div>
 
       <div className='nav-right-half'>
         <a href=''>Add Pokemon</a>
