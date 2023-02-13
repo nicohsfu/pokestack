@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.scss';
-import { FaTrash } from "react-icons/fa";
+import { FaInfoCircle, FaTrash } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 function Card(props) {
 
@@ -17,7 +18,16 @@ function Card(props) {
       </div>
 
       <div className='name-and-type-and-button'>
-        <div className='fixedWidthDiv'></div>
+        <div className='fixedWidthDiv'>
+          <Link to="/info">
+            <FaInfoCircle
+              role="button"
+              tabIndex="0"
+              size={24}
+              color="#153D74"
+            />
+          </Link>
+        </div>
         <div className='name-and-type'>
           <h2>{props.name}</h2>
           <p>{props.type}</p>
@@ -29,11 +39,12 @@ function Card(props) {
             size={24}
             color="#153D74"
             onClick={() => {
-              props.handleDelete(props.id)
+              props.handleDelete(props.id);
             }}
           />
         </div>
       </div>
+
 
     </div>
   );

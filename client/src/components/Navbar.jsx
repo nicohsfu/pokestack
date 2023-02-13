@@ -1,19 +1,25 @@
 import React from 'react';
 import './Navbar.scss';
+import { Link, Router } from 'react-router-dom';
 
 function Navbar() {
   return (
     <div className='navbar'>
-      <div>
-        <img
-          className='pokestack-logo'
-          src='https://i.imgur.com/h8vf1yd.png'
-          alt='pokestack logo and logotype'
-        />
-      </div>
+
+      <Link to="/">
+        <div>
+          <img
+            className='pokestack-logo'
+            src='https://i.imgur.com/h8vf1yd.png'
+            alt='pokestack logo and logotype'
+          />
+        </div>
+      </Link>
 
       <div className='nav-right-half'>
-        <a href=''>Add Pokemon</a>
+        <Link to="/search">
+          Add Pokemon
+        </Link>
         <p>Logged in as: Ash</p>
       </div>
     </div>
