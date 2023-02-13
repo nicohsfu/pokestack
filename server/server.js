@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import dotenv from 'dotenv';
 
 import trainerRoutes from './routes/trainers.js';
@@ -11,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/trainers', trainerRoutes);
 app.use('/pokemon', pokemonRoutes);
