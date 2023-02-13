@@ -7,10 +7,10 @@ function Card(props) {
 
       <div className='front-and-back-views'>
         <div>
-          <img src={props.frontURL} alt="front view" />
+          <img src={props.frontImage} alt="front view" />
         </div>
         <div>
-          <img src={props.rearURL} alt="back view" />
+          <img src={props.backImage} alt="back view" />
         </div>
       </div>
 

@@ -11,13 +11,16 @@ function App() {
   useEffect(() => {
     axios.get('/pokemon')
       .then(result => {
-        setPokemonCards(result.data.map(pokemon => {
-          <Card 
-            frontImage={pokemon.frontImage}
-            backImage={pokemon.backImage}
-            name={pokemon.name}
-            type={pokemon.type}
-          />
+        setPokemonCards(result.data.map((pokemon, index) => {
+          return (
+            <Card
+              key={index}
+              frontImage={pokemon.frontImage}
+              backImage={pokemon.backImage}
+              name={pokemon.name}
+              type={pokemon.type}
+            />
+          )
         }))
       });
   }, [pokemonCards]);
@@ -27,9 +30,11 @@ function App() {
       <Navbar />
       
       <div className='cards'>
-        <Card name="Squirtle" type="Water" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"/>
+        {/* <Card name="Squirtle" type="Water" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"/>
         <Card name="Ivysaur" type="Grass" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png"/>
-        <Card name="Charizard" type="Fire | Flying" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"/>
+        <Card name="Charizard" type="Fire | Flying" frontURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" rearURL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"/> */
+        pokemonCards
+        }
 
       </div>
 
