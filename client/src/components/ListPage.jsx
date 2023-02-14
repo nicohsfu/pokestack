@@ -1,13 +1,13 @@
 import React from 'react';
-import Pokemon from './Pokemon';
 
 const ListPage = ({ searchResults }) => {
-  let results = searchResults.map((pokemon, index) => <article>{pokemon.name}</article>);
-  console.log("results", results);
+  const results = searchResults.map((pokemon, index) => <article key={index}>{pokemon.name}</article>);
+
+  const content = results.length ? results : <article><p>No Matching Pokemon</p></article>
 
   return (
     <>
-      {results}
+      <main>{content}</main>
     </>
   );
 };
