@@ -10,7 +10,6 @@ const Search = () => {
   useEffect(() => {
     getPokemon().then(json => {
       setPokemon(json.results);
-      return json.results;
       setSearchResults(json.results);
     });
   }, []);
