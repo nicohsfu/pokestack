@@ -3,12 +3,8 @@ import Card from './Card';
 import axios from 'axios';
 import './Home.scss';
 
-const Home = () => {
+const Home = (props) => {
   const [pokemonCards, setPokemonCards] = useState([]);
-
-  const viewInfo = (id) => {
-
-  };
 
   const handleDelete = (id) => {
     const filteredPokemon = pokemonCards.filter(pokemon => pokemon.id !== id);
@@ -33,6 +29,7 @@ const Home = () => {
                 `${pokemon.type[0]}`
               }
               handleDelete={handleDelete}
+              setSelectedPokemon={props.setSelectedPokemon}
             />
           );
         }));
