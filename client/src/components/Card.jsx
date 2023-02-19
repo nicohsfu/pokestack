@@ -25,6 +25,7 @@ function Card(props) {
               tabIndex="0"
               size={24}
               color="#153D74"
+              onClick={() => props.setSelectedPokemon(props.id)}
             />
           </Link>
         </div>
