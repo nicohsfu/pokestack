@@ -1,9 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Info.scss';
 import { FaInfoCircle, FaTrash } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Info(props) {
+  const [loadedPokemon, setLoadedPokemon] = useState({});
+
+  useEffect(() => {
+    generateInfo(props.id)
+  })
+  
+  const generateInfo = async (id) => {
+    try {
+      const pokemonInfo = await axios.get(`/pokemon/${props.id}`);
+      setLoadedPokemon(pokemonInfo.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  // const {
+  //   _id,
+  //   name,
+  //   type,
+  //   frontImage,
+  //   backImage,
+  //   ability,
+  //   hp,
+  //   attack,
+  //   defense,
+  //   specialAttack,
+  //   specialDefense,
+  //   speed
+  // }
+
+  const totalStat = loadedPokemon.hp + loadedPokemon.attack + loadedPokemon.defense + loadedPokemon.specialAttack + loadedPokemon.specialDefense + loadedPokemon.speed;
+
   return (
     // RENAME CSS CLASSES
     <>
@@ -17,19 +50,19 @@ function Info(props) {
 
         <div className='front-and-back-views'>
           <div>
-            <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png"} alt="front view" />
+            <img src={loadedPokemon.frontImage} alt="front view" />
           </div>
           <div>
-            <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/392.png"} alt="back view" />
+            <img src={loadedPokemon.backImage} alt="back view" />
           </div>
         </div>
 
         <div className='name-and-type-and-button'>
 
           <div className='name-and-type'>
-            <h2>Infernape</h2>
-            <p>fire | fighting</p>
-            <p>Blaze</p>
+            <h2>{loadedPokemon.name}</h2>
+            <p>{loadedPokemon.type}</p>
+            <p>{loadedPokemon.ability}</p>
           </div>
 
         </div>
@@ -38,31 +71,31 @@ function Info(props) {
           <table>
             <tr>
               <td>HP</td>
-              <td>44</td>
+              <td>{loadedPokemon.hp}</td>
             </tr>
             <tr>
               <td>Attack</td>
-              <td>48</td>
+              <td>{loadedPokemon.attack}</td>
             </tr>
             <tr>
               <td>Defense</td>
-              <td>65</td>
+              <td>{loadedPokemon.defense}</td>
             </tr>
             <tr>
               <td>Special Attack</td>
-              <td>65</td>
+              <td>{loadedPokemon.specialAttack}</td>
             </tr>
             <tr>
               <td>Special Defense</td>
-              <td>64</td>
+              <td>{loadedPokemon.specialDefense}</td>
             </tr>
             <tr>
               <td>Speed</td>
-              <td>43</td>
+              <td>{loadedPokemon.speed}</td>
             </tr>
             <tr>
               <td>Total</td>
-              <td>314</td>
+              <td>{totalStat}</td>
             </tr>
           </table>
         </div>
