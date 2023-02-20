@@ -65,34 +65,36 @@ function Info(props) {
 
         <div>
           <table>
-            <tr>
-              <td>HP</td>
-              <td>{hp}</td>
-            </tr>
-            <tr>
-              <td>Attack</td>
-              <td>{attack}</td>
-            </tr>
-            <tr>
-              <td>Defense</td>
-              <td>{defense}</td>
-            </tr>
-            <tr>
-              <td>Special Attack</td>
-              <td>{specialAttack}</td>
-            </tr>
-            <tr>
-              <td>Special Defense</td>
-              <td>{specialDefense}</td>
-            </tr>
-            <tr>
-              <td>Speed</td>
-              <td>{speed}</td>
-            </tr>
-            <tr>
-              <td>Total</td>
-              <td>{totalStat}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>HP</td>
+                <td>{hp}</td>
+              </tr>
+              <tr>
+                <td>Attack</td>
+                <td>{attack}</td>
+              </tr>
+              <tr>
+                <td>Defense</td>
+                <td>{defense}</td>
+              </tr>
+              <tr>
+                <td>Special Attack</td>
+                <td>{specialAttack}</td>
+              </tr>
+              <tr>
+                <td>Special Defense</td>
+                <td>{specialDefense}</td>
+              </tr>
+              <tr>
+                <td>Speed</td>
+                <td>{speed}</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>{totalStat}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
