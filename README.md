@@ -16,7 +16,3 @@ Here, you can manage your dream Pokémon team by searching for new pokemon and a
 ## Demo
 
 ![demo of the app](linkToTheGifHere)
-
-![demo of the app](linkToTheGifHere)
-
-![demo of the app](linkToTheGifHere)
