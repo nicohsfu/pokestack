@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 import ListPage from './ListPage';
 import { getPokemon } from '../axios';
 
-const Search = () => {
+const Search = ({ fullRoster }) => {
   const [pokemon, setPokemon] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
@@ -19,6 +19,7 @@ const Search = () => {
       <SearchBar
         pokemon={pokemon}
         setSearchResults={setSearchResults}
+        fullRoster={fullRoster}
       />
       <ListPage searchResults={searchResults} />
     </>
