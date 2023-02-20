@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Info.scss';
-import { FaInfoCircle, FaTrash } from "react-icons/fa";
 import axios from 'axios';
 
 function Info(props) {
@@ -8,61 +8,65 @@ function Info(props) {
 
   useEffect(() => {
     generateInfo(props.id)
-  })
-  
+  });
+
   const generateInfo = async (id) => {
     try {
-      const pokemonInfo = await axios.get(`/pokemon/${props.id}`);
+      const pokemonInfo = await axios.get(`/pokemon/${id}`);
       setLoadedPokemon(pokemonInfo.data);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const {
+    _id,
+    name,
+    type,
+    frontImage,
+    backImage,
+    ability,
+    hp,
+    attack,
+    defense,
+    specialAttack,
+    specialDefense,
+    speed
+  } = loadedPokemon;
 
-  // const {
-  //   _id,
-  //   name,
-  //   type,
-  //   frontImage,
-  //   backImage,
-  //   ability,
-  //   hp,
-  //   attack,
-  //   defense,
-  //   specialAttack,
-  //   specialDefense,
-  //   speed
-  // }
-
-  const totalStat = loadedPokemon.hp + loadedPokemon.attack + loadedPokemon.defense + loadedPokemon.specialAttack + loadedPokemon.specialDefense + loadedPokemon.speed;
+  const totalStat = hp + attack + defense + specialAttack + specialDefense + speed;
 
   return (
     // RENAME CSS CLASSES
     <>
       <div>
-        <button>
-          Back to Roster
-        </button>
+        <Link to="/">
+          <button>
+            Back to Roster
+          </button>
+        </Link>
         <br /><br />
       </div>
       <div className='card'>
 
         <div className='front-and-back-views'>
           <div>
-            <img src={loadedPokemon.frontImage} alt="front view" />
+            <img src={frontImage} alt="front view" />
           </div>
           <div>
-            <img src={loadedPokemon.backImage} alt="back view" />
+            <img src={backImage} alt="back view" />
           </div>
         </div>
 
         <div className='name-and-type-and-button'>
 
           <div className='name-and-type'>
-            <h2>{loadedPokemon.name}</h2>
-            <p>{loadedPokemon.type}</p>
-            <p>{loadedPokemon.ability}</p>
+            <h2>{name}</h2>
+            {/* <p>{Object.keys(type).length > 1 ?
+                `${type["01"]} | ${type["02"]}` :
+                `${type["01"]}`}</p> */}
+            <p>{type}</p>
+            <p>{ability}</p>
           </div>
 
         </div>
@@ -71,27 +75,27 @@ function Info(props) {
           <table>
             <tr>
               <td>HP</td>
-              <td>{loadedPokemon.hp}</td>
+              <td>{hp}</td>
             </tr>
             <tr>
               <td>Attack</td>
-              <td>{loadedPokemon.attack}</td>
+              <td>{attack}</td>
             </tr>
             <tr>
               <td>Defense</td>
-              <td>{loadedPokemon.defense}</td>
+              <td>{defense}</td>
             </tr>
             <tr>
               <td>Special Attack</td>
-              <td>{loadedPokemon.specialAttack}</td>
+              <td>{specialAttack}</td>
             </tr>
             <tr>
               <td>Special Defense</td>
-              <td>{loadedPokemon.specialDefense}</td>
+              <td>{specialDefense}</td>
             </tr>
             <tr>
               <td>Speed</td>
-              <td>{loadedPokemon.speed}</td>
+              <td>{speed}</td>
             </tr>
             <tr>
               <td>Total</td>
