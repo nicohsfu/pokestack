@@ -1,4 +1,12 @@
-.card {
+.info {
+  // border: 2px dashed blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,6 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1rem;
   }
 
   .fixedWidthDiv {
@@ -48,4 +57,22 @@
     justify-content: center;
     width: 4rem;
   }
+
+  td {
+    // border: 2px solid red;
+    padding: 1rem;
+    background-color: #153D74;
+    border-radius: 0.25rem;
+    color: white;
+  }
+}
+
+.back-to-roster-button {
+  // border: 2px solid red;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  padding: 0.7rem;
+  background-color: #FFDB73;
+  color: #153D74;
 }

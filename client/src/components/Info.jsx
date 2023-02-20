@@ -7,7 +7,7 @@ function Info(props) {
   const [loadedPokemon, setLoadedPokemon] = useState({});
 
   useEffect(() => {
-    generateInfo(props.id)
+    generateInfo(props.id);
   });
 
   const generateInfo = async (id) => {
@@ -38,16 +38,8 @@ function Info(props) {
 
   return (
     // RENAME CSS CLASSES
-    <>
-      <div>
-        <Link to="/">
-          <button>
-            Back to Roster
-          </button>
-        </Link>
-        <br /><br />
-      </div>
-      <div className='card'>
+    <div className='info'>
+      <div className='info-card'>
 
         <div className='front-and-back-views'>
           <div>
@@ -105,7 +97,15 @@ function Info(props) {
         </div>
 
       </div>
-    </>
+      <div>
+        <Link to="/">
+          <button className='back-to-roster-button'>
+            <p>Back to Roster</p>
+          </button>
+        </Link>
+        <br /><br />
+      </div>
+    </div>
 
   );
 };
