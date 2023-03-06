@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Card from './Card';
 import axios from 'axios';
 import './Home.scss';
@@ -40,7 +40,7 @@ const Home = ({ setSelectedPokemon, pokemonCards, setPokemonCards }) => {
       <h1>Your Team</h1>
       <h2 className='subheader'>Roster: {pokemonCards.length} / 6</h2>
       <div className='cards'>
-        {pokemonCards}
+        {pokemonCards.length ? pokemonCards : <div className='no-pokemon-message'><p>Your team is empty!</p></div>}
       </div>
     </div>
   );
