@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './SearchBar.scss';
 
 const SearchBar = ({ pokemon, setSearchResults, fullRoster }) => {
   const [text, setText] = useState('');
@@ -48,7 +49,7 @@ const SearchBar = ({ pokemon, setSearchResults, fullRoster }) => {
   };
 
   return (
-    <header>
+    <header className='search-bar'>
       <form
         action='POST'
         method='/pokemon'
