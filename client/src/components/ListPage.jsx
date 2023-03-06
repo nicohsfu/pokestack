@@ -1,9 +1,10 @@
 import React from 'react';
+import SearchItem from './SearchItem';
 
 const ListPage = ({ searchResults }) => {
-  const results = searchResults.map((pokemon, index) => <article key={index}>{pokemon.name}</article>);
+  const results = searchResults.map((pokemon, index) => <SearchItem key={index} name={pokemon.name}/>);
 
-  const content = results.length ? results : <article><p>No Matching Pokemon</p></article>
+  const content = results.length ? results : <article><p>No Matching Pokemon</p></article>;
 
   return (
     <>
