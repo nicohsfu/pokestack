@@ -1,7 +1,7 @@
 import React from 'react';
 import './SearchBar.scss';
 
-const SearchBar = ({ pokemon, setSearchResults, text, setText, handleSubmit}) => {
+const SearchBar = ({ pokemon, setSearchResults, text, setText, handleSubmit }) => {
 
   const handleSearchChange = e => {
     if (!e.target.value) {
@@ -13,20 +13,29 @@ const SearchBar = ({ pokemon, setSearchResults, text, setText, handleSubmit}) =>
   };
 
   return (
-    <header className='search-bar'>
+    <div>
       <form
         action='POST'
         method='/pokemon'
         onSubmit={e => handleSubmit(e)}
+        className='search-bar'
       >
-        Search:
-        <input
-          value={text}
-          onChange={e => handleSearchChange(e)}
-        />
-        <button>Submit</button>
+        <div className='gap'>
+          <div>
+            Search:
+          </div>
+          <div>
+            <input
+              value={text}
+              onChange={e => handleSearchChange(e)}
+            />
+          </div>
+        </div>
+        <div>
+          <button class='submit-button'>Add Pokemon</button>
+        </div>
       </form>
-    </header>
+    </div>
   );
 };
 

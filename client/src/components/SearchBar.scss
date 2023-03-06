@@ -3,9 +3,29 @@
   border-radius: 0.5rem;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
+  gap: 1rem;
 
   margin-bottom: 1rem;
+
+  .gap {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .submit-button {
+    background-color: #153D74;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    color: #FFDB73;
+    border: none;
+  }
+
+  input{
+    border: none;
+  }
 }
