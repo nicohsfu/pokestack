@@ -1,9 +1,11 @@
 import React from 'react';
 
-const SearchItem = ({ name }) => {
+const SearchItem = ({ name, handleAutoComplete }) => {
   return (
     <div className='search-item'>
-      <article>{name}</article>
+      <article
+        onClick={() => handleAutoComplete(name)}
+      >{name}</article>
     </div>
   );
 };
