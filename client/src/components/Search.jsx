@@ -22,7 +22,7 @@ const Search = ({ fullRoster }) => {
     if (!fullRoster) {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${text}`)
         .then(response => {
-
+          console.log(response);
           const newPokemon = JSON.stringify({
             name: text,
             type: response.data.types.map(item => item.type.name),
@@ -51,7 +51,7 @@ const Search = ({ fullRoster }) => {
     }
   }
 
-  const handleAutoComplete = (name) => {
+  const handleAutoComplete = (e, name) => {
     setText(name);
   }
 
