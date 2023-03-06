@@ -9,7 +9,7 @@ import Info from './components/Info';
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState('');
   const [pokemonCards, setPokemonCards] = useState([]);
-  const fullRoster = pokemonCards.length === 6;
+  const fullRoster = pokemonCards.length >= 6;
 
   return (
     <div className='app'>
