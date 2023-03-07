@@ -51,7 +51,7 @@ const Search = ({ fullRoster }) => {
     }
   }
 
-  const handleAutoComplete = (e, name) => {
+  const handleAutoComplete = (name) => {
     setText(name);
   }
 

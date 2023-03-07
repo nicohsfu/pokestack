@@ -5,7 +5,7 @@ const SearchItem = ({ name, handleAutoComplete }) => {
   return (
     <div className='search-item'>
       <article
-        onClick={e => handleAutoComplete(e, name)}
+        onClick={() => handleAutoComplete(name)}
       >{name}</article>
     </div>
   );
